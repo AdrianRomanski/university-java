@@ -8,7 +8,7 @@ public class s22333_ROMANSKI {
 
 //         zadanie01();
 //         zadanie06();
-//       zadanie07();
+       zadanie07();
 //          zadanie08();
 //        zadanie09(10, 3);
 //        zadanie10(true);
@@ -92,6 +92,9 @@ public class s22333_ROMANSKI {
         System.out.println(zadanie_7_06); // 14
         int zadanie_7_07 = 2 * 5 + 3 * (4 - 8);
         System.out.println(zadanie_7_06); // 14
+        // int x = 2 * ((5 + 3) * 4 - 8); Gracias
+        int zadanie_7_08 = 2 * ((5 + 3) * 4 - 8);
+        System.out.println(zadanie_7_08); // powinno byc ok
     }
 
     static void zadanie08() {
@@ -166,5 +169,6 @@ public class s22333_ROMANSKI {
         }
 
     }
+
 }
 
