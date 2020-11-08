@@ -3,7 +3,7 @@ package basics_of_programming.labs.lab_2;
 import java.util.Random;
 import java.util.Scanner;
 
-public class s22333_ROMANSKI {
+public class anotherLab0 {
     public static void main(String[] args) {
 
 //         zadanie01();

@@ -1,9 +1,12 @@
 package basics_of_programming.labs.lab_2;
 
+import java.util.Scanner;
+
 public class anotherLab2 {
 
     public static void main(String[] args) {
 
+        System.out.println(32 >> 2);
     }
 
     static void exercise1() {
@@ -138,5 +141,115 @@ public class anotherLab2 {
         // (7 & 9) ^ 9 = 9;
         // (7 & 16) ^ 16 = 16;
         // (7 & 38) ^ 38 = 38;
+    }
+
+    static void exercise6() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Prosze wprowadzic liczbe: ");
+        int number = in.nextInt();
+
+        // jesli wyjdzie zero to jest parzysta
+        int result = number & 0b1;
+        boolean parzysta = result == 0 ? true : false;
+
+        System.out.println(number + " czy jest liczba parzysta? " + parzysta);
+    }
+
+    static void exercise7() {
+        int number32 = 32;
+        // 8
+        int number8 = number32 >> 2;
+
+        // 16
+        int number16 = number32 >> 1;
+
+        // 4
+        int number4 = number32 >> 3;
+
+        // 1
+        int number1 = number32 >> 5;
+
+        // 0
+        int number0 = number32 >> 6;
+    }
+
+    static void exercise8() {
+        int number4 = 4;
+    //16
+        int number16 = number4 << 2;
+    //8
+        int number8 = number4 << 1;
+    //32
+        int number32 = number4 << 3;
+    //64
+    //128
+    //256
+    }
+
+    static void exercise9() {
+        // Zakladajac, ze w javie liczby od zera 1 bit jest dla mnie b0
+        //- 2 bit
+        //- 3 bit
+        //- 1 bit i 4 bit - 2 bit i 3 bit
+
+        Scanner sc = new Scanner(System.in);
+        int nextInt = sc.nextInt();
+
+        //- 1 bit
+        int bit1 = nextInt & 0b1;
+        System.out.println("Pierwszy bit ma wartosc " + bit1);
+
+        //- 2 bit
+        int bit2 = nextInt & 0b10;
+
+        int bit2val = bit2 == 2 ? 1 : 0;
+        System.out.println("Drugi bit ma wartosc " + bit2val);
+
+        //- 3 bit
+        int bit3 = nextInt & 0b100;
+
+        int bit3val = bit3 == 4 ? 1 : 0;
+        System.out.println("Trzeci bit ma wartosc " + bit3val);
+
+        //- 1 bit i 4 bi
+        int bit4 = nextInt & 0b1000;
+
+        int bit4val = bit4 == 8 ? 1 : 0;
+
+        int bit1_4 = nextInt & 0b0001;
+
+        int bit1_4val = bit1_4 == 1 ? 1 : 0;
+        System.out.println("Pierwszy bit ma wartosc" + bit1_4val + "Czwarty bit ma wartosc " + bit4val);
+
+        //-  2 bit i 3 bit
+        int bit2_2 = nextInt & 0b010;
+
+        int bit2val2 = bit2 == 2 ? 1 : 0;
+
+        int bit2_3 = nextInt & 0b0100;
+
+        int bit2_3val = bit2_3 == 4 ? 1 : 0;
+        System.out.println("Drugi bit ma wartosc" + bit2val2 + "Trzeci bit ma wartosc " + bit2_3val);
+    }
+
+    static void exercise10() {
+        //- 1 -> 2
+        int number1 = 1;
+        int number2 = 1 << 1;
+        //- 2 -> 4
+        int number2_2 = 2;
+        int number4 = 2 << 1;
+        //- 4 -> 2
+        int number4_1 = 4;
+        int number2_3 = number4_1 >> 1;
+        //- 3 -> 1
+        int number3 = 3;
+        int number1_1 = number3 >> 1;
+        //- 3 -> 2
+        int number3_1 = 3;
+        int number2_4 = (number3 >> 1) << 1;
+        //- 7 -> 6
+        int number7 = 7;
+        int number6 = (number7 >> 1) << 1;
     }
 }
