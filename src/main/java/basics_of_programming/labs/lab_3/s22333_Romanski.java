@@ -3,7 +3,7 @@ package basics_of_programming.labs.lab_3;
 public class s22333_Romanski {
 
     public static void main(String[] args) {
-         // exercise1(); // - gotowe
+         // exercise2(); // - gotowe
          // exercise2(); // - gotowe
          // exercise3(); // - gotowe
     }
