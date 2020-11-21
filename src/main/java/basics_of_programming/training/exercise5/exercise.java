@@ -16,8 +16,8 @@ public class exercise {
 //        exercise6();
 //        exercise7();
 //        exercise8();
-//
-        exercise10();
+//        exercise9();
+//        exercise10();
     }
 
 
@@ -33,22 +33,16 @@ public class exercise {
     }
 
     static void exercise3() {
-//        int var = 2;
-//        int var2 = 2;
-//
-//        while(var < 3) {
-//            System.out.println("While Loop");
-//            System.out.println(var);
-//            var++;
-//        }
-//
-//        do{
-//            System.out.println("Do Loop");
-//            System.out.println(var);
-//        }
-//        while(var2 < 3);
-//        var2++;
-//        System.out.println("While inside do");
+        boolean state = false;
+
+        while(state) {
+            System.out.println("While");
+        }
+
+        do{
+            System.out.println("Do");
+        }
+        while(state);
     }
 
 
@@ -140,23 +134,37 @@ public class exercise {
 
 
     static void exercise9() {
-        int[] arr = {1,4,5,6,7,-1};
+        int[] ints = {1,4,5,6,7,-298,-3,-12,-9};
 
-        int closestIndex = 0;
+        int index1 = 0;
+        int index2 = 0;
 
-        int diff = Integer.MAX_VALUE;
+        int closest = Integer.MAX_VALUE;
 
-        for (int i = 0; i < arr.length; ++i) {
-            int abs = Math.abs(arr[i]);
-            if (abs < diff) {
-                closestIndex = i;
-                diff = abs;
-            } else if (abs == diff && arr[i] > 0 && arr[closestIndex] < 0) {
-                //same distance to zero but positive
-                closestIndex =i;
+        int temp;
+
+
+        for(int i=0; i < ints.length; i ++) {
+            for(int j=0; j< ints.length; j++) {
+                if(i!=j) {
+                    temp = ints[i] + ints[j];
+                    if(temp < 0) {
+                        temp*=(-1);
+                    }
+                    if(temp < closest) {
+                        closest = temp;
+                        index1 = i;
+                        index2 = j;
+                    }
+                }
             }
         }
-        System.out.println(arr[closestIndex ]);
+
+        System.out.println("First Index = " + index1);
+        System.out.println("Second Index = " + index2);
+
+        System.out.println("Closest sum to zero = " + closest);
+
     }
 
 
@@ -170,7 +178,6 @@ public class exercise {
         for (int i = 0; i < ints.length; i++) {
             ints[i] = i;
         }
-
         for (int i = 0; i < ints.length; i += 2) {
             if (i < ints.length - 1) {
                 int temp = ints[i];
@@ -178,11 +185,9 @@ public class exercise {
                 ints[i + 1] = temp;
             }
         }
-
         for(int i: ints) {
             System.out.print(i +" ");
         }
-
         for (int i = 0; i < ints.length; i++) {
             System.out.println();
             for (int j = 0; j < ints.length; j++) {
