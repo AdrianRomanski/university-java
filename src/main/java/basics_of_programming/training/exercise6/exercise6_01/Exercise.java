@@ -7,7 +7,7 @@ public class Exercise {
 
     public static void main(String[] args) {
 
-        exercise3();
+        exercise2();
 
     }
 
@@ -78,11 +78,11 @@ public class Exercise {
 
     static boolean check(int[] arr, int number) {
         int size = arr.length;
-        int number2 = 0;
+        int sum = 0;
         for(int num: arr) {
-            number2+=Math.pow(num, size);
+            sum+=Math.pow(num, size);
         }
-        return number == number2;
+        return number == sum;
     }
 
 

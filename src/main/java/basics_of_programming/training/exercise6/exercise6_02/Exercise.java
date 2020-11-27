@@ -6,6 +6,9 @@ public class Exercise {
 
     public static void main(String[] args) {
 
+
+        exercise2();
+
     }
 
     static void exercise1() {
@@ -22,10 +25,15 @@ public class Exercise {
                 sum+=1;
                 number=0;
             } else if(number < 10) {
+                // 4
                 sum+=number;
                 number=0;
             } else {
+                // 484 % 10 = 4
+                // 48 % 10 = 8
                 sum+=number%10;
+                // 484 / 10 = 48
+                // 48 / 10 = 4
                 number/=10;
             }
         }
@@ -78,9 +86,14 @@ public class Exercise {
             if(number == 10)
                 digits[i]=10;
             else if(number < 10)
+                // 1
                 digits[i]=number;
             else {
+                // 153 % 10 = 3
+                // 15 % 10 = 5
                 digits[i]=number%10;
+                // 153 / 10 = 15
+                // 15 / 10 = 1
                 number/=10;
             }
         }
