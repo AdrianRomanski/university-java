@@ -1,4 +1,4 @@
-package basics_of_programming.lectures.lecture_9;
+package basics_of_programming.lectures.lecture_9_10;
 
 class Point {
 
@@ -12,6 +12,7 @@ class Point {
 
     public Point(int x, int y) {
         this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -21,4 +22,11 @@ class Point {
                 ", y=" + y +
                 '}';
     }
+
+    public boolean equals(Point point) {
+        if(this == point)
+            return true;
+        return this.y == point.y && this.x == point.x;
+    }
+
 }
