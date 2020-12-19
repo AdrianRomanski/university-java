@@ -8,7 +8,7 @@ public class DonkeyBalloonsMain {
 
         System.out.println(balloon.getLoad());
 
-        Donkey donkey = new Donkey(1);
+        Donkey donkey = new Donkey(3);
 
         while (!donkey.isFlying()) {
             donkey.addBalloon(new Balloon());

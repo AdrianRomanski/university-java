@@ -7,26 +7,26 @@ import java.util.stream.Collectors;
 
 public class Person {
 
-    private String name;
+    private final String name;
     private int birthYear;
 
     public Person(String name, int birthYear) {
         this.name = name;
-        this.birthYear = birthYear;
+        if(birthYear > 1900) {
+            this.birthYear = birthYear;
+        } else {
+            System.out.println("You cant be as old " + name + "! Birth date is initialized to default");
+            this.birthYear = 1990;
+        }
     }
 
-    public Person(String name) {
-        this(name, 1990);
-    }
-
+    public Person(String name) { this(name, 1990); }
 
     public String getName() {
         return name;
     }
 
-    public int getAge() {
-        return 2020 - birthYear;
-    }
+    public int getAge() { return 2020 - birthYear; }
 
     static Person getOlder(Person first, Person second) {
         return first.getAge() > second.getAge() ? first : second;
@@ -69,5 +69,4 @@ public class Person {
             }
         }
     }
-
 }

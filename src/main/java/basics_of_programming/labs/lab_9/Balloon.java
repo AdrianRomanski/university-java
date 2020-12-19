@@ -4,10 +4,8 @@ import java.util.Random;
 
 public class Balloon {
 
-    private final double ratio = 6 / 0.007;
-
-    private double capacity;
-    private double load;
+    private final static double RATIO = 6 / 0.007;
+    private final double load;
 
     public Balloon() {
         Random random = new Random();
@@ -15,10 +13,10 @@ public class Balloon {
         while(number < 5) {
             number = random.nextInt(10);
         }
-        this.capacity=number/1000;
-        this.load=capacity*ratio;
-    }
+        double capacity = number / 1000;
 
+        this.load= capacity * RATIO;
+    }
 
     public double getLoad() {
         return this.load;

@@ -6,14 +6,15 @@ public class PersonMain {
 
     public static void main(String[] args) {
 
-        Person person = new Person("Adrian", 26);
-        Person person1 = new Person("Filip", 29);
-        Person person2 = new Person("Dominik", 18);
-        Person person3 = new Person("Kinga", 33);
-        Person person4 = new Person("Bartek", 26);
-        Person person5 = new Person("Asia", 18);
+        Person person = new Person("Adrian", 1992);
+        Person person1 = new Person("Filip", 1989);
+        Person person2 = new Person("Dominik", 1954);
+        Person person3 = new Person("Kinga", 2004);
+        Person person4 = new Person("Bartek", 1899);
+        Person person5 = new Person("Asia", 1992);
+        Person person6 = new Person("Wojtek");
 
-        Person[] people = {person, person1, person2, person3, person4, person5};
+        Person[] people = {person, person1, person2, person3, person4, person5, person6};
 
         System.out.println("Name and Age of people:");
         for(Person p: people) {
