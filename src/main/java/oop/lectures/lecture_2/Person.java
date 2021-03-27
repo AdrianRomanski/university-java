@@ -18,4 +18,12 @@ public class Person implements Comparable<Person>{
     public int compareTo(Person person) {
         return this.age - person.age;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }
