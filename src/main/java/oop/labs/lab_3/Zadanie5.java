@@ -2,7 +2,9 @@ package oop.labs.lab_3;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Zadanie5 {
 
@@ -14,12 +16,22 @@ public class Zadanie5 {
         figury.add(new Kolo(10,5, 10));
         figury.add(new Prostokat(10,5, 4, 8));
         figury.add(new Prostokat(10,5, 4, 8));
-        figury.add(new Prostokat(10,5, 2, 4));
-        figury.add(new Prostokat(10,5, 2, 4));
 
         Collections.sort(figury);
 
         for(Figura f: figury) {
+            System.out.println(f);
+        }
+
+        System.out.println("******************");
+
+        List<Figura> collect = figury.stream()
+                .sorted(Comparator.comparing(Figura::getObwod)
+                        .thenComparing(Figura::getPole)
+                        .thenComparing(Figura::getIndex))
+                .collect(Collectors.toList());
+
+        for(Figura f: collect) {
             System.out.println(f);
         }
     }
@@ -43,6 +55,18 @@ abstract class Figura implements Obliczanie, Comparable<Figura>{
 
     @Override
     public String toString() { return fig(); }
+
+    public double getPole() {
+        return pole;
+    }
+
+    public double getObwod() {
+        return obwod;
+    }
+
+    public int getIndex() {
+        return index;
+    }
 }
 
 class Kolo extends Figura {
@@ -96,8 +120,14 @@ class Kolo extends Figura {
     }
 
     @Override
-    public int compareTo(Figura o) {
-        return 0;
+    public int compareTo(Figura figura) {
+        if (!(this.obwod == figura.obwod)) {
+            return (int) (this.obwod - figura.obwod);
+        } else if (!(this.pole == figura.pole)) {
+            return (int) (this.pole - figura.pole);
+        } else {
+            return this.index - figura.index;
+        }
     }
 }
 
