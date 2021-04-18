@@ -73,7 +73,7 @@ static class IterNap implements Iterable<Character> {
             public Character next() {
                 if (hasNext()) {
                     char c = input.charAt(index);
-                    index += step;
+                    index+=step;
                     return c;
                 } else return null;
             }
