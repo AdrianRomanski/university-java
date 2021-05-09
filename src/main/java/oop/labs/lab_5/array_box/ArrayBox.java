@@ -1,7 +1,6 @@
 package oop.labs.lab_5.array_box;
 
 class ArrayBox <T extends Comparable> {
-
     Object[] arr;
     int index;
     int size;
@@ -69,7 +68,7 @@ class ArrayBox <T extends Comparable> {
             if(min == null) {
                 min = (T)this.arr[i];
             } else {
-                if (min.compareTo(this.arr[i]) < 1) {
+                if (min.compareTo(this.arr[i]) < 0) {
                     min = (T) this.arr[i];
                 }
             }
@@ -141,7 +140,6 @@ class ArrayBox <T extends Comparable> {
     }
 
     static class Osoba implements Comparable<Osoba> {
-
         private final String imie;
         private final int wiek;
 
@@ -163,9 +161,7 @@ class ArrayBox <T extends Comparable> {
         }
     }
 
-
     static class Student extends Osoba {
-
         private final int numerGrupy;
 
         public Student(String imie, int wiek, int numerGrupy) {
@@ -185,7 +181,6 @@ class ArrayBox <T extends Comparable> {
             }
         }
     }
-
 
     static class Test {
         public static void main(String[] args) {
@@ -221,4 +216,3 @@ class ArrayBox <T extends Comparable> {
         }
     }
 }
-
