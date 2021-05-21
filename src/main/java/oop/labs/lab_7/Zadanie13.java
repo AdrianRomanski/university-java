@@ -11,10 +11,9 @@ public class Zadanie13 {
         new Zadanie13();
     }
 
-    public Zadanie13()
-    {
+    public Zadanie13() {
         SwingUtilities.invokeLater(
-                () -> createGUI()
+                this::createGUI
         );
     }
 
