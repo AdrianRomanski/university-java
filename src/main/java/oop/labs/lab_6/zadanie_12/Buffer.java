@@ -12,18 +12,18 @@ class Buffer {
     }
 
     synchronized void put(int randomNumber) {
+        // pelny to czekamy
         if(index == max) {
             closeProduction();
         }
-        if(index + 1 <= max) {
+        if(index + 1 < max) {
           numbers[index++]=randomNumber;
-        } else {
-            numbers[index]=randomNumber;
         }
         notify();
     }
 
     synchronized int get ()  {
+        // pusty to czekamy
         if ((index == 0) && (!endOfProduction)) {
             try {
                 wait();

@@ -55,6 +55,7 @@ public class StringTask implements Runnable{
         this.state = TaskState.RUNNING;
         for (int i = 0; i < timesOfDuplicate; i++) {
             result = result + input;
+            // break przed koncem
         }
         isDone=true;
         this.state = TaskState.READY;

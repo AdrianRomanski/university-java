@@ -22,18 +22,6 @@ public class Zadanie14 {
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setResizable(true);
 
-        var button1 = new JButton("Przycisk 1");
-        jp.add(button1);
-        var button2 = new JButton("P 2");
-        jp.add(button2);
-        var button3 = new JButton("Większy przycisk numer 3");
-        jp.add(button3);
-        var button4 = new JButton("Przycisk 4");
-        jp.add(button4);
-        var button5 = new JButton("P5");
-        jp.add(button5);
-        jf.add(jp);
-
         var choice = JOptionPane.showInputDialog("""
                 Wybierz swój ulubiony Layout:\s
                 1 - BorderLayout\s
@@ -58,6 +46,20 @@ public class Zadanie14 {
             }
         }
         jp.setLayout(lm);
+
+        var button1 = new JButton("Przycisk 1");
+        jp.add(button1, BorderLayout.CENTER);
+        var button2 = new JButton("P 2");
+        jp.add(button2, BorderLayout.SOUTH);
+        var button3 = new JButton("Większy przycisk numer 3");
+        jp.add(button3, BorderLayout.EAST);
+        var button4 = new JButton("Przycisk 4");
+        jp.add(button4, BorderLayout.NORTH);
+        var button5 = new JButton("P5");
+        jp.add(button5, BorderLayout.WEST);
+        jf.add(jp);
+
+
         jf.setVisible(true);
     }
 }
